@@ -44,6 +44,7 @@ lib
 *.mk
 *.workspace.session
 *.workspace
+*.workspace.*
 *.project
 *.txt
-/Makefile
+*/Makefile
