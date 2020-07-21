@@ -12,6 +12,9 @@ void pass_by_value1(int num);
 void pass_by_value2(string s);
 void pass_by_value3(vector<string> v);
 void print_vector(vector<string> v);
+void pass_array(int numbers[], size_t size);
+void pass_array2(const int numbers[], size_t size);
+void pass_by_ref1(int &num);
 
 double calc_cost(double base_cost = 100.0, double tax_rate = 0.06, double shipping = 3.50);
 
@@ -70,6 +73,12 @@ int main() {
 
     cout << endl;
     
+    cout << endl<<"============== pass by ref =================="<<endl;
+    int num1 = 500;
+    cout << "before call : "<< num1 << endl;
+    pass_by_ref1(num1);
+    cout << "after call : "<< num1<< endl;
+    
     return 0;
 }
 
@@ -98,4 +107,22 @@ double calc_cost(double base_cost, double tax_rate, double shipping) {
 
 void greeting(string name,  string prefix, string suffix) {
     cout << "Hello " << prefix + " " + name + " " + suffix << endl;
+}
+
+void pass_array(int numbers[], size_t size){
+    for(size_t i{0}; i < size; i++){
+        numbers[i] = 0;  // Modifying array here will reflecr in calling function
+    }
+}
+
+void pass_array2(const int numbers[], size_t size){
+    for(size_t i{0}; i < size; i++){
+        // numbers[i] = 0;  // can't modify array as it is const
+    }
+}
+
+void pass_by_ref1(int &num){
+    if(num > 100){
+        num = 100;
+    }
 }
