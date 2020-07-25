@@ -29,6 +29,13 @@ void display(int *array, int sentinel){
     cout << endl;
 }
 
+int *max_num(int *x, int *y){
+    if(*x > *y) {
+        return x;
+    }
+    return y;
+}
+
 int main() {
     int x =20;
     cout << "x = "<< x<< endl;
@@ -54,5 +61,8 @@ int main() {
     
     int score[] {100, 95, 89, -1};
     display(score, -1);
+    cout << "--------------"<<endl;
+    int m = 10, n =20;
+    cout << "max number between 10 and 20: "<< *max_num(&m, &n) << endl;
     return 0;
 }
