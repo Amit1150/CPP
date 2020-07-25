@@ -20,6 +20,8 @@ double calc_cost(double base_cost = 100.0, double tax_rate = 0.06, double shippi
 
 void greeting(string name,  string prefix = "Mr.", string suffix = "");
 
+unsigned long long factorial(unsigned long long n);
+
 
 int main() {
     cout << "square root for 10: " << sqrt(10)<<endl;
@@ -79,6 +81,9 @@ int main() {
     pass_by_ref1(num1);
     cout << "after call : "<< num1<< endl;
     
+    cout << endl<<"================================"<<endl;
+    cout << "factorial of 10: "<< factorial(10) << endl;
+    
     return 0;
 }
 
@@ -125,4 +130,12 @@ void pass_by_ref1(int &num){
     if(num > 100){
         num = 100;
     }
+}
+
+unsigned long long factorial(unsigned long long n){
+    if(n == 0){
+        return 1;
+    }
+    
+    return n* factorial(n-1);
 }
