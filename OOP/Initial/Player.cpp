@@ -2,21 +2,20 @@
 #include <iostream>
 using namespace std;
 
-Player::Player()
+Player::Player() : name {"None"}, health{0}, xp{0}
 {
-    name = "None";
-    health = 100;
-    xp = 0;
     cout<< "deafault con"<< endl;
 }
 Player::Player(string n)
 {
     name = n;
+    health = 100;
+    xp = 0;
     cout<< "1 param con"<< endl;
 }
-Player::Player(string n, int health, int xp)
+Player::Player(string n, int h, int x)
+    : name {n}, health {h}, xp{x}
 {
-    name = n;
     cout<< "3 param con"<< endl;
 }
 
