@@ -2,26 +2,32 @@
 #include <iostream>
 using namespace std;
 
-Player::Player() : name {"None"}, health{0}, xp{0}
+Player::Player() 
+    : Player("None",0, 0)
 {
-    cout<< "deafault con"<< endl;
+    cout<< "deafault constructor"<< endl;
 }
 Player::Player(string n)
+    :Player(n, 0, 0)
 {
-    name = n;
-    health = 100;
-    xp = 0;
-    cout<< "1 param con"<< endl;
+    cout<< "1 param constructor"<< endl;
 }
 Player::Player(string n, int h, int x)
     : name {n}, health {h}, xp{x}
 {
-    cout<< "3 param con"<< endl;
+    cout<< "3 param constructor"<< endl;
+}
+
+// Copy constructor
+Player:: Player(const Player &source) 
+    :Player(source.name, source.health, source.xp)
+{
+    cout << "copy constructor made copy of: "<< source.name << endl;
 }
 
 Player::~Player()
 {
-    cout<< "destructor con for: "<< name << endl;
+    cout<< "destructor for: "<< name << endl;
 }
 
 

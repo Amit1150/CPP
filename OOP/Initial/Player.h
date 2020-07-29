@@ -5,7 +5,7 @@ using namespace std;
 
 class Player
 {
-private:
+public:
     string name;
     int health;
     int xp;
@@ -14,6 +14,7 @@ public:
     Player();
     Player(string name);
     Player(string name, int health, int xp);
+    Player(const Player &source); // Copy constructor
     ~Player();
 
 };
