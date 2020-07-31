@@ -9,7 +9,7 @@ string longestCommonPrefix(vector<string>& strs)
     if(strs.size() == 0)
         return "";
     string output { strs[0] };
-    size_t int maxLen { output.length() };
+    size_t maxLen { output.length() };
     for(auto s : strs) {
         int start { 0 };
         while(start < maxLen) {
