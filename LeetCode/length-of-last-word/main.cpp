@@ -5,13 +5,15 @@ using namespace std;
 
 int lengthOfLastWord(string s)
 {
-    int count { 0 };
+    bool reset {false};
+    int count = 0;
     for(auto c : s) {
         if(c == ' '){
-            count = 0;
-            continue;
+            reset = true;
+        } else {
+            count = reset ? 1 : count+1;
+            reset = false;
         }
-        count++;
     }
     return count;
 }
@@ -19,8 +21,10 @@ int lengthOfLastWord(string s)
 int main()
 {
     cout <<  lengthOfLastWord("Amit Kum") << endl;
-    cout <<  lengthOfLastWord("Hello World") << endl;
-    cout <<  lengthOfLastWord("hello") << endl;
+    cout <<  lengthOfLastWord("Hello World   ") << endl;
+    cout <<  lengthOfLastWord("hello ") << endl;
     cout <<  lengthOfLastWord("hi helo getge") << endl;
+    cout <<  lengthOfLastWord("hi helo     ") << endl;
+    cout <<  lengthOfLastWord("") << endl;
     return 0;
 }
