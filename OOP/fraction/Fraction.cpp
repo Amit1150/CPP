@@ -8,6 +8,7 @@ Fraction::Fraction(int n, int d)
     denominator = d;
 }
 
+// inbuild copy contructor always made shallow copy.
 Fraction::Fraction(const Fraction &f)
 {
     cout << "copy constructor"<< endl;

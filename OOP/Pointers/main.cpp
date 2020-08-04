@@ -28,9 +28,8 @@ int main() {
     s6.display();
     
     delete s2;
-    delete s4
-    delete s5
-    delete s6;
+    delete s4;
+    delete s5;
     
     return 0;
 }
